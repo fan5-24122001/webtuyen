@@ -276,9 +276,8 @@
                                     <div class="job-post-info">
                                         <h4 >{{$item->title}}</h4>
                                         <ul>
-                                            <li><i class="fa fa-map-marker"></i> Sacramento, California</li>
-                                            <li><i class="fa fa-bookmark-o"></i> Full Time</li>
-                                            <li><i class="fa fa-clock-o"></i> Published 11 months ago</li>
+                                            <li><i class="fa fa-map-marker"></i>{{$item->address}}</li>
+                                           
                                         </ul>
                                     </div>
                                 </div>
@@ -325,7 +324,7 @@
                             <div class="quote-info">
                                 <h4>Make a Difference with Your Online Resume!</h4>
                                 <p>Your resume in minutes with JobBoard resume assistant is ready!</p>
-                                <a href="#" class="site-button">Create an Account</a>
+                                <a href="{{ route('register') }}" class="site-button">Create an Account</a>
                             </div>
                         </div>
                     </div>
@@ -336,7 +335,7 @@
     <!-- Our Job END -->
     <!-- Call To Action -->
     <div class="section-full p-tb70 overlay-black-dark text-white text-center bg-img-fix"
-        style="background-image: url(images/background/bg4.jpg);">
+        style="background-image: url({{asset('images/background/bg4.jpg')}});">
         <div class="container">
             <div class="section-head text-center text-white">
                 <h2 class="m-b5">Testimonials</h2>
@@ -415,8 +414,7 @@
                                     <p>Lorem ipsum dolor sit amet adipiscing elit sed do eiusmod tempors labore et
                                         dolore magna siad enim aliqua</p>
                                     <div class="m-t20">
-                                        <a href="#" class="site-button radius-xl"><span class="p-lr30">Sign
-                                                Up</span></a>
+                                        <a href="#" class="site-button radius-xl"><span class="p-lr30">Sign Up</span></a>
                                     </div>
                                 </div>
                             </div>
@@ -431,8 +429,7 @@
                                     <p>Lorem ipsum dolor sit amet adipiscing elit sed do eiusmod tempors labore et
                                         dolore magna siad enim aliqua</p>
                                     <div class="m-t20">
-                                        <a href="#" class="site-button white radius-xl"><span class="p-lr30">Sign
-                                                Up</span></a>
+                                        <a href="#" class="site-button white radius-xl"><span class="p-lr30">Sign Up</span></a>
                                     </div>
                                 </div>
                             </div>
@@ -447,8 +444,7 @@
                                     <p>Lorem ipsum dolor sit amet adipiscing elit sed do eiusmod tempors labore et
                                         dolore magna siad enim aliqua</p>
                                     <div class="m-t20">
-                                        <a href="#" class="site-button radius-xl"><span class="p-lr30">Sign
-                                                Up</span></a>
+                                        <a href="#" class="site-button radius-xl"><span class="p-lr30">Sign Up</span></a>
                                     </div>
                                 </div>
                             </div>

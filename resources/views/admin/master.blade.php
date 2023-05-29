@@ -154,6 +154,7 @@
     <script src="{{asset('admin/js/plugins-init/sweetalert.init.js')}}"></script>
 
 	<script src="{{asset('admin/vendor/jquery-nice-select/js/jquery.nice-select.min.js')}}"></script>
-
+	<script src="{{asset('admin/vendor/ckeditor/ckeditor.js')}}"></script>
+    
 </body>
 </html>

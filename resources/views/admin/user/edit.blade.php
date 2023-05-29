@@ -36,8 +36,7 @@
                                 <div class="basic-form">
 
 
-                                    <form action="{{ route('CheckUser.update', $user->id) }}" method="POST"
-                                        enctype="multipart/form-data">
+                                    <form action="{{ route('CheckUser.update', $user->id) }}" method="POST" enctype="multipart/form-data">
                                         @csrf
                                         @method('PUT')
                                         <div class="toolbar mb-4" role="toolbar">

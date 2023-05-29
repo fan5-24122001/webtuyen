@@ -80,11 +80,11 @@ class CheckUserControlller extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        User::find($id)->delete();
-        return redirect()->back();
-    }
+        public function destroy($id)
+        {
+            User::find($id)->delete();
+            return redirect()->back();
+        }
     public function showprofile()
     {
         $id = Auth::user()->id;

@@ -32,8 +32,7 @@
                                     <tr>
                                         <th>Stt</th>
                                         <th>Tên</th>
-                                        <th>tuổi</th>
-                                        <th>địa</th>
+                                      
                                         
                                         <th>Trạng Thái</th>
                                     </tr>
@@ -48,10 +47,10 @@
                                             
                                             
                                             @if($p->status == 0)
-                                            Đã Nghỉ
+                                            Chưa Duyệt
                                             @endif
                                             @if($p->status == 1)
-                                           Đi học
+                                            Đã Duyệt
                                             @endif</td>
                                         <td>
                                             <div class="d-flex"> 
@@ -59,8 +58,7 @@
                                                     
                                                         <button type="submit" class="btn btn-danger btn-sm">Sửa</button>
                                                   
-                                                </a>   ||   
-                                               
+                                                </a>   
                                                     <form method="post" action="{{route('PostAdmin.destroy',$p->id)}}">
                                                         @method('delete')
                                                         @csrf

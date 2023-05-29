@@ -1,0 +1,85 @@
+-- --------------------------------------------------------
+-- Máy chủ:                      127.0.0.1
+-- Server version:               8.0.30 - MySQL Community Server - GPL
+-- Server OS:                    Win64
+-- HeidiSQL Phiên bản:           12.1.0.6537
+-- --------------------------------------------------------
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET NAMES utf8 */;
+/*!50503 SET NAMES utf8mb4 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+
+-- Dumping database structure for shoplanhuong
+CREATE DATABASE IF NOT EXISTS `shoplanhuong` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `shoplanhuong`;
+
+-- Dumping structure for table shoplanhuong.product
+CREATE TABLE IF NOT EXISTS `product` (
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
+  `id_category` int NOT NULL,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `amount` int NOT NULL,
+  `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `price` int NOT NULL,
+  `image` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `dongCPU` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `congNgheCPU` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `maCPU` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `tocDoCPU` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `TanSoTuborToiDa` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `soLoiCPU` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `soluong` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `boNhoDem` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `dungLuongRAM` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `loaiRAM` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `tocDoBusRAM` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `hoTroRAMToiDa` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `kheCamRAM` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `dungLuongOCung` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `loaiOCung` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `chuanGiaoTiepOCung` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `kheOCungMoRong` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `cardDoHoai` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `cardTichHop` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `kichThuocManHinh` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `doPhanGiai` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `tangSoQuet` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `CongNgheManHinh` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `ketNoiKhongGiay` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `thongSoLanWireless` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `congGiaoTiep` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `webcam` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `denBanPhim` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `tinhNangDatBiet` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `heDieuHanh` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `thongSoPin` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `kichThuoc` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `trongLuong` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `mauSac` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `chatLieu` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `phuKien` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `content` text COLLATE utf8mb4_unicode_ci,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Dumping data for table shoplanhuong.product: ~5 rows (approximately)
+REPLACE INTO `product` (`id`, `id_category`, `name`, `amount`, `description`, `price`, `image`, `created_at`, `updated_at`, `dongCPU`, `congNgheCPU`, `maCPU`, `tocDoCPU`, `TanSoTuborToiDa`, `soLoiCPU`, `soluong`, `boNhoDem`, `dungLuongRAM`, `loaiRAM`, `tocDoBusRAM`, `hoTroRAMToiDa`, `kheCamRAM`, `dungLuongOCung`, `loaiOCung`, `chuanGiaoTiepOCung`, `kheOCungMoRong`, `cardDoHoai`, `cardTichHop`, `kichThuocManHinh`, `doPhanGiai`, `tangSoQuet`, `CongNgheManHinh`, `ketNoiKhongGiay`, `thongSoLanWireless`, `congGiaoTiep`, `webcam`, `denBanPhim`, `tinhNangDatBiet`, `heDieuHanh`, `thongSoPin`, `kichThuoc`, `trongLuong`, `mauSac`, `chatLieu`, `phuKien`, `content`) VALUES
+	(11, 13, 'áo nam', 19, 'hi', 200000, 'uploads/0-product-1683647865.jpg', '2023-05-09 01:57:45', '2023-05-09 18:02:58', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+	(12, 13, 'Ghế sắt đẹp', 14, 'xczxc zxczxc', 500000, NULL, '2023-05-14 08:58:10', '2023-05-14 09:45:01', 'zxcx', 'zxc', 'zxc zxc', NULL, NULL, 'zxc', NULL, 'vnvbn', NULL, 'ưqe', 'ẻt', NULL, 'rgdf', 'dfg', NULL, NULL, 'xcvb', NULL, NULL, NULL, NULL, NULL, NULL, 'zc', 'ãd', NULL, 'ưeqwe', NULL, 'gfnvb', 'cvbxcb', 'zxc', 'zãcd', 'zxc', NULL, 'bdfg', 'qứad', '<p>Đến với&nbsp;<strong>PH&Uacute;C ANH</strong>&nbsp;để mua sắm c&aacute;c sản phẩm&nbsp;<strong>CH&Iacute;NH H&Atilde;NG</strong>&nbsp;với mức&nbsp;<strong>GI&Aacute; LU&Ocirc;N TỐT NHẤT!</strong></p>\r\n\r\n<h2>Laptop HP Envy X360 13-bf0097TU 76B17PA</h2>\r\n\r\n<p>Thiết kế bản lề xoay gập linh hoạt c&ugrave;ng hiệu năng mạnh mẽ,&nbsp;<strong>HP Envy x360&nbsp;13-bf0097TU 76B17PA</strong>&nbsp;l&agrave;&nbsp;d&ograve;ng&nbsp;m&aacute;y t&iacute;nh mỏng nhẹ cao cấp, ph&ugrave; hợp cho người d&ugrave;ng l&agrave; sinh vi&ecirc;n, nh&acirc;n vi&ecirc;n văn ph&ograve;ng, những người trẻ năng động cần di chuyển thường xuy&ecirc;n.</p>\r\n\r\n<p><img alt="Laptop HP Envy X360 13-bf0097TU 76B17PA" src="https://phucanhcdn.com/media/lib/12-11-2022/laptop-hp-envy-x360-13-bf0097tu-76b17pa-1.png" style="height:532px; width:594px" /></p>\r\n\r\n<h3>Thiết kế mỏng nhẹ, cao cấp</h3>\r\n\r\n<p>Thiết kế b&ecirc;n ngo&agrave;i của&nbsp;laptop&nbsp;<strong>HP Envy x360 13-bf0097TU 76B17PA</strong>&nbsp;to&aacute;t l&ecirc;n sự sang trọng, cao cấp nhờ thiết kế nhỏ gọn, mạnh mẽ v&agrave; độ mỏng ấn tượng. Được chế t&aacute;c từ khung nh&ocirc;m b&oacute;ng bẩy, bền vững v&agrave; si&ecirc;u nhẹ,&nbsp;<strong>HP Envy x360</strong>&nbsp;vừa sang trọng, vừa c&oacute; độ bền đ&aacute;ng mơ ước. Phi&ecirc;n bản m&agrave;u bạc Sivler sang trọng, đơn giản nhưng rất nổi bật. Kiểu d&aacute;ng thời thượng với viền m&agrave;n h&igrave;nh si&ecirc;u mỏng, những đường cắt vu&ocirc;ng vắn v&agrave; c&aacute;c chi tiết ho&agrave;n thiện tỉ mỉ tạo n&ecirc;n chiếc&nbsp;laptop&nbsp;đẳng cấp bậc nhất.</p>'),
+	(13, 13, 'zxc 123123123 cvbcv trí', 10000, 'ascd zxczx zxc', 10900000, NULL, '2023-05-14 08:59:20', '2023-05-14 09:44:00', 'gegeg', NULL, NULL, 'zxczxc zxc', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '123zxczxc', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '123dfdf', 'tris nef', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'asd', NULL, NULL, NULL, 'ád', '<p>Đến với&nbsp;<strong>PH&Uacute;C ANH</strong>&nbsp;để mua sắm c&aacute;c sản phẩm&nbsp;<strong>CH&Iacute;NH H&Atilde;NG</strong>&nbsp;với mức&nbsp;<strong>GI&Aacute; LU&Ocirc;N TỐT NHẤT!</strong></p>\r\n\r\n<h2>Laptop HP Envy X360 13-bf0097TU 76B17PA</h2>\r\n\r\n<p>Thiết kế bản lề xoay gập linh hoạt c&ugrave;ng hiệu năng mạnh mẽ,&nbsp;<strong>HP Envy x360&nbsp;13-bf0097TU 76B17PA</strong>&nbsp;l&agrave;&nbsp;d&ograve;ng&nbsp;m&aacute;y t&iacute;nh mỏng nhẹ cao cấp, ph&ugrave; hợp cho người d&ugrave;ng l&agrave; sinh vi&ecirc;n, nh&acirc;n vi&ecirc;n văn ph&ograve;ng, những người trẻ năng động cần di chuyển thường xuy&ecirc;n.</p>\r\n\r\n<p><img alt="Laptop HP Envy X360 13-bf0097TU 76B17PA" src="https://phucanhcdn.com/media/lib/12-11-2022/laptop-hp-envy-x360-13-bf0097tu-76b17pa-1.png" style="height:532px; width:594px" /></p>\r\n\r\n<h3>Thiết kế mỏng nhẹ, cao cấp</h3>\r\n\r\n<p>Thiết kế b&ecirc;n ngo&agrave;i của&nbsp;laptop&nbsp;<strong>HP Envy x360 13-bf0097TU 76B17PA</strong>&nbsp;to&aacute;t l&ecirc;n sự sang trọng, cao cấp nhờ thiết kế nhỏ gọn, mạnh mẽ v&agrave; độ mỏng ấn tượng. Được chế t&aacute;c từ khung nh&ocirc;m b&oacute;ng bẩy, bền vững v&agrave; si&ecirc;u nhẹ,&nbsp;<strong>HP Envy x360</strong>&nbsp;vừa sang trọng, vừa c&oacute; độ bền đ&aacute;ng mơ ước. Phi&ecirc;n bản m&agrave;u bạc Sivler sang trọng, đơn giản nhưng rất nổi bật. Kiểu d&aacute;ng thời thượng với viền m&agrave;n h&igrave;nh si&ecirc;u mỏng, những đường cắt vu&ocirc;ng vắn v&agrave; c&aacute;c chi tiết ho&agrave;n thiện tỉ mỉ tạo n&ecirc;n chiếc&nbsp;laptop&nbsp;đẳng cấp bậc nhất.</p>\r\n\r\n<p>&nbsp;<img alt="Laptop HP Envy X360 13-bf0097TU 76B17PA" src="https://phucanhcdn.com/media/product/49226_laptop_hp_envy_x360_13_bf0097tu_76b17pa_2.jpg" style="height:600px; width:600px" /></p>\r\n\r\n<h3>Cảm hứng bất tận</h3>\r\n\r\n<p><strong>M&agrave;n h&igrave;nh HP Envy x360</strong>&nbsp;c&oacute; phần viền m&agrave;n h&igrave;nh mỏng n&acirc;ng cao trải nghiệm xem, cho h&igrave;nh ảnh th&ecirc;m phần sống động. Độ ph&acirc;n giải Full HD tr&ecirc;n&nbsp;m&agrave;n h&igrave;nh 13.3 inch&nbsp;mang tới h&igrave;nh ảnh sắc n&eacute;t, tạo cảm hứng cả khi l&agrave;m việc v&agrave; giải tr&iacute;. C&ocirc;ng nghệ m&agrave;n h&igrave;nh IPS, BrightView gi&uacute;p mọi thứ trở n&ecirc;n tươi s&aacute;ng, hấp dẫn, hiển thị h&igrave;nh ảnh v&agrave; video rực rỡ hơn. M&agrave;n h&igrave;nh cảm ứng của&nbsp;<strong><a href="https://www.phucanh.vn/may-tinh-xach-tay-laptop-hp.html">laptop HP</a></strong>&nbsp;n&agrave;y tương th&iacute;ch với b&uacute;t cảm ứng để tạo th&agrave;nh một b&agrave;n vẽ linh hoạt. Bạn c&oacute; thể d&ugrave;ng b&uacute;t cảm ứng để viết vẽ tự nhi&ecirc;n, cảm gi&aacute;c như đang viết tr&ecirc;n giấy. Thỏa sức s&aacute;ng tạo, ghi ch&uacute; với&nbsp;<strong>HP Envy x360</strong>.&nbsp;M&agrave;n h&igrave;nh cảm ứng&nbsp;kết hợp với th&acirc;n m&aacute;y xoay 360 độ gi&uacute;p bạn c&oacute; thể sử dụng m&aacute;y với 4 chế độ kh&aacute;c nhau. D&ugrave; l&agrave; dưới vai tr&ograve; laptop th&ocirc;ng thường; m&aacute;y t&iacute;nh bảng hay tr&igrave;nh chiếu,&nbsp;<strong>HP Envy x360</strong>&nbsp;cũng đều thể hiện xuất sắc v&agrave; hữu dụng. Với &acirc;m thanh được tinh chỉnh bởi c&ocirc;ng nghệ h&agrave;ng đầu Bang &amp; Olufsen,<strong>&nbsp;HP Envy X360 13</strong>&nbsp;mang đến cho bạn những gi&acirc;y ph&uacute;t giải tr&iacute;, thư gi&atilde;n tuyệt vời.</p>\r\n\r\n<p>&nbsp;</p>'),
+	(14, 15, 'Phan Văn Trí day 123', 10000, 'asdzxczx', 500000, NULL, '2023-05-14 09:48:17', '2023-05-14 09:48:17', '123 zxczx', NULL, NULL, NULL, NULL, NULL, NULL, '123 adasd', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'asd gefef', '<p>Đến với&nbsp;<strong>PH&Uacute;C ANH</strong>&nbsp;để mua sắm c&aacute;c sản phẩm&nbsp;<strong>CH&Iacute;NH H&Atilde;NG</strong>&nbsp;với mức&nbsp;<strong>GI&Aacute; LU&Ocirc;N TỐT NHẤT!</strong></p>\r\n\r\n<h2>Laptop HP Envy X360 13-bf0097TU 76B17PA</h2>\r\n\r\n<p>Thiết kế bản lề xoay gập linh hoạt c&ugrave;ng hiệu năng mạnh mẽ,&nbsp;<strong>HP Envy x360&nbsp;13-bf0097TU 76B17PA</strong>&nbsp;l&agrave;&nbsp;d&ograve;ng&nbsp;m&aacute;y t&iacute;nh mỏng nhẹ cao cấp, ph&ugrave; hợp cho người d&ugrave;ng l&agrave; sinh vi&ecirc;n, nh&acirc;n vi&ecirc;n văn ph&ograve;ng, những người trẻ năng động cần di chuyển thường xuy&ecirc;n.</p>\r\n\r\n<p><img alt="Laptop HP Envy X360 13-bf0097TU 76B17PA" src="https://phucanhcdn.com/media/lib/12-11-2022/laptop-hp-envy-x360-13-bf0097tu-76b17pa-1.png" style="height:532px; width:594px" /></p>\r\n\r\n<h3>Thiết kế mỏng nhẹ, cao cấp</h3>\r\n\r\n<p>Thiết kế b&ecirc;n ngo&agrave;i của&nbsp;laptop&nbsp;<strong>HP Envy x360 13-bf0097TU 76B17PA</strong>&nbsp;to&aacute;t l&ecirc;n sự sang trọng, cao cấp nhờ thiết kế nhỏ gọn, mạnh mẽ v&agrave; độ mỏng ấn tượng. Được chế t&aacute;c từ khung nh&ocirc;m b&oacute;ng bẩy, bền vững v&agrave; si&ecirc;u nhẹ,&nbsp;<strong>HP Envy x360</strong>&nbsp;vừa sang trọng, vừa c&oacute; độ bền đ&aacute;ng mơ ước. Phi&ecirc;n bản m&agrave;u bạc Sivler sang trọng, đơn giản nhưng rất nổi bật. Kiểu d&aacute;ng thời thượng với viền m&agrave;n h&igrave;nh si&ecirc;u mỏng, những đường cắt vu&ocirc;ng vắn v&agrave; c&aacute;c chi tiết ho&agrave;n thiện tỉ mỉ tạo n&ecirc;n chiếc&nbsp;laptop&nbsp;đẳng cấp bậc nhất.</p>'),
+	(15, 13, 'zcxzxc', 10, 'zxc', 500000, 'uploads/1-product-1684083161.jpg|uploads/0-product-1684083161.jpg', '2023-05-14 09:52:00', '2023-05-14 09:52:41', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '<p>Đến với&nbsp;<strong>PH&Uacute;C ANH</strong>&nbsp;để mua sắm c&aacute;c sản phẩm&nbsp;<strong>CH&Iacute;NH H&Atilde;NG</strong>&nbsp;với mức&nbsp;<strong>GI&Aacute; LU&Ocirc;N TỐT NHẤT!</strong></p>\r\n\r\n<h2>Laptop HP Envy X360 13-bf0097TU 76B17PA</h2>\r\n\r\n<p>Thiết kế bản lề xoay gập linh hoạt c&ugrave;ng hiệu năng mạnh mẽ,&nbsp;<strong>HP Envy x360&nbsp;13-bf0097TU 76B17PA</strong>&nbsp;l&agrave;&nbsp;d&ograve;ng&nbsp;m&aacute;y t&iacute;nh mỏng nhẹ cao cấp, ph&ugrave; hợp cho người d&ugrave;ng l&agrave; sinh vi&ecirc;n, nh&acirc;n vi&ecirc;n văn ph&ograve;ng, những người trẻ năng động cần di chuyển thường xuy&ecirc;n.</p>\r\n\r\n<p><img alt="Laptop HP Envy X360 13-bf0097TU 76B17PA" src="https://phucanhcdn.com/media/lib/12-11-2022/laptop-hp-envy-x360-13-bf0097tu-76b17pa-1.png" style="height:532px; width:594px" /></p>\r\n\r\n<h3>Thiết kế mỏng nhẹ, cao cấp</h3>\r\n\r\n<p>Thiết kế b&ecirc;n ngo&agrave;i của&nbsp;laptop&nbsp;<strong>HP Envy x360 13-bf0097TU 76B17PA</strong>&nbsp;to&aacute;t l&ecirc;n sự sang trọng, cao cấp nhờ thiết kế nhỏ gọn, mạnh mẽ v&agrave; độ mỏng ấn tượng. Được chế t&aacute;c từ khung nh&ocirc;m b&oacute;ng bẩy, bền vững v&agrave; si&ecirc;u nhẹ,&nbsp;<strong>HP Envy x360</strong>&nbsp;vừa sang trọng, vừa c&oacute; độ bền đ&aacute;ng mơ ước. Phi&ecirc;n bản m&agrave;u bạc Sivler sang trọng, đơn giản nhưng rất nổi bật. Kiểu d&aacute;ng thời thượng với viền m&agrave;n h&igrave;nh si&ecirc;u mỏng, những đường cắt vu&ocirc;ng vắn v&agrave; c&aacute;c chi tiết ho&agrave;n thiện tỉ mỉ tạo n&ecirc;n chiếc&nbsp;laptop&nbsp;đẳng cấp bậc nhất.</p>');
+
+/*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
+/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
+/*!40014 SET FOREIGN_KEY_CHECKS=IFNULL(@OLD_FOREIGN_KEY_CHECKS, 1) */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40111 SET SQL_NOTES=IFNULL(@OLD_SQL_NOTES, 1) */;

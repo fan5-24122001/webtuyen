@@ -27,47 +27,50 @@
                 <div class="row">
                     <div class="col-xl-9 col-lg-8">
                         <h5 class="widget-title font-weight-700 text-uppercase">Recent Jobs</h5>
+
+
+                     
                         <ul class="post-job-bx">
+                       
+                                    @foreach ($data as $item)
 
-                            @foreach ($data as $item)
+                                    @if($item->status == 0)
 
-                            @if($item->status == 0)
+                                    @endif
+                                    @if($item->status == 1)
+                                    <li>
+                                        <a href="{{ route('viewPost', ['id'=>$item->id]) }}">
+                                            <div class="d-flex m-b30">
+                                                <div class="job-post-company">
+                                                     <span><img src="{{asset('user1/images/logo/icon1.png')}}" /></span>
+                                                </div>
+                                                <div class="job-post-info">
+                                                    <h4>{{$item->title}}</h4>
+                                                    <ul>
+                                                    <li><i class="fa fa-map-marker"></i>{{$item->address}}</li>
+                                                       
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex">
+                                                <div class="job-time mr-auto">
 
-                            @endif
-                            @if($item->status == 1)
-                            <li>
-                                <a href="{{ route('viewPost', ['id'=>$item->id]) }}">
-                                    <div class="d-flex m-b30">
-                                        <div class="job-post-company">
-                                            <span><img src="{{asset('user1/images/logo/icon1.png')}}" /></span>
-                                        </div>
-                                        <div class="job-post-info">
-                                            <h4>{{$item->title}}</h4>
-                                            <ul>
-                                                <li><i class="fa fa-map-marker"></i> Sacramento, California</li>
-                                                <li><i class="fa fa-bookmark-o"></i> Full Time</li>
-                                                <li><i class="fa fa-clock-o"></i> Published 11 months ago</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="d-flex">
-                                        <div class="job-time mr-auto">
-
-                                            <span> {{$item->type}}</span>
+                                                    <span> {{$item->type}}</span>
 
 
-                                        </div>
-                                        <div class="salary-bx">
-                                            <span>${{$item->minMoney}}.USD - ${{$item->maxMoney}}.USD</span>
-                                        </div>
-                                    </div>
-                                    <span class="post-like fa fa-heart-o"></span>
-                                </a>
-                            </li>
-                            @endif
+                                                </div>
+                                                <div class="salary-bx">
+                                                    <span>${{$item->minMoney}}.USD - ${{$item->maxMoney}}.USD</span>
+                                                </div>
+                                            </div>
+                                            <span class="post-like fa fa-heart-o"></span>
+                                        </a>
+                                    </li>
+                                    @endif
 
-                            @endforeach
+                                    @endforeach
                         </ul>
+
                         <div class="pagination-bx m-t30">
                             <ul class="pagination">
                                 <li class="previous"><a href="#"><i class="ti-arrow-left"></i> Prev</a></li>
@@ -86,89 +89,14 @@
                                     <input type="text" class="form-control" placeholder="Search">
                                 </div>
                             </div>
-                            <div class="clearfix m-b10">
-                                <h5 class="widget-title font-weight-700 m-t0 text-uppercase">Location</h5>
-                                <input type="text" class="form-control m-b30" placeholder="Location">
-                                <div class="input-group m-b20">
-                                    <input type="text" class="form-control" placeholder="120">
-                                    <select>
-                                        <option>Km</option>
-                                        <option>miles</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="clearfix m-b30">
-                                <h5 class="widget-title font-weight-700 text-uppercase">Job type</h5>
-                                <div class="row">
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-6">
-                                        <div class="product-brand">
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" id="check1"
-                                                    name="example1">
-                                                <label class="custom-control-label" for="check1">Freelance</label>
-                                            </div>
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" id="check2"
-                                                    name="example1">
-                                                <label class="custom-control-label" for="check2">Full Time</label>
-                                            </div>
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" id="check3"
-                                                    name="example1">
-                                                <label class="custom-control-label" for="check3">Internship</label>
-                                            </div>
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" id="check4"
-                                                    name="example1">
-                                                <label class="custom-control-label" for="check4">Part Time</label>
-                                            </div>
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" id="check5"
-                                                    name="example1">
-                                                <label class="custom-control-label" for="check5">Temporary</label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-6">
-                                        <div class="product-brand">
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" id="check8"
-                                                    name="example1">
-                                                <label class="custom-control-label" for="check8">Internship</label>
-                                            </div>
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" id="check9"
-                                                    name="example1">
-                                                <label class="custom-control-label" for="check9">Part Time</label>
-                                            </div>
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" id="check10"
-                                                    name="example1">
-                                                <label class="custom-control-label" for="check10">Temporary</label>
-                                            </div>
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" id="check6"
-                                                    name="example1">
-                                                <label class="custom-control-label" for="check6">Freelance</label>
-                                            </div>
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" id="check7"
-                                                    name="example1">
-                                                <label class="custom-control-label" for="check7">Full Time</label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                             <div class="clearfix">
-                                <h5 class="widget-title font-weight-700 text-uppercase">Category</h5>
-                                <select>
-                                    <option>Any Category</option>
-                                    <option>Automotive Jobs</option>
-                                    <option>Construction Facilities</option>
-                                    <option>Design, Art & Multimedia</option>
-                                    <option>Food Services</option>
-                                </select>
+                                <h5 class="widget-title font-weight-700 text-uppercase">Sort</h5>
+                               
+                                <div class="clearfix">
+                                            <span><a href="{{ URL::to('sorta') }}" style="color: black"> Sắp Xếp Lương Cao - Thấp </a></span><br>
+                                            <span><a href="{{ URL::to('sortprice1') }}" style="color: black">  Sắp Xếp Lương Thấp - Cao </a></span>
+                                           
+                                </div>
                             </div>
                         </div>
                     </div>

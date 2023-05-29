@@ -1,116 +1,106 @@
 @extends('layouts.master')
 @section('content')
-    <div class="job-listing-area pt-120 pb-120">
+<div class="page-content bg-white">
+    <!-- inner page banner -->
+    <div class="dez-bnr-inr overlay-black-middle"
+        style="background-image:url({{asset('user1/imagesbanner/bnr1.jpg')}});">
         <div class="container">
-            <div class="row">
-                <!-- Left content -->
-                <div class="col-xl-3 col-lg-3 col-md-4">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="small-section-tittle2 mb-45">
-                                <div class="ion"> <svg xmlns="http://www.w3.org/2000/svg"
-                                        xmlns:xlink="http://www.w3.org/1999/xlink" width="20px" height="12px">
-                                        <path fill-rule="evenodd" fill="rgb(27, 207, 107)"
-                                            d="M7.778,12.000 L12.222,12.000 L12.222,10.000 L7.778,10.000 L7.778,12.000 ZM-0.000,-0.000 L-0.000,2.000 L20.000,2.000 L20.000,-0.000 L-0.000,-0.000 ZM3.333,7.000 L16.667,7.000 L16.667,5.000 L3.333,5.000 L3.333,7.000 Z">
-                                        </path>
-                                    </svg>
-                                </div>
-                                <h4>Filter Jobs</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Job Category Listing start -->
-                    
-                    <!-- Job Category Listing End -->
+            <div class="dez-bnr-inr-entry">
+                <h1 class="text-white">Browse Jobs</h1>
+                <!-- Breadcrumb row -->
+                <div class="breadcrumb-row">
+                    <ul class="list-inline">
+                        <li><a href="#">Home</a></li>
+                        <li>Browse Jobs</li>
+                    </ul>
                 </div>
-                <!-- Right content -->
-                <div class="col-xl-9 col-lg-9 col-md-8">
-                    <!-- Featured_job_start -->
-                    <section class="featured-job-area">
-                        <div class="container">
-                            <!-- Count of Job list Start -->
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <div class="count-job mb-35">
-                                        <span>39, 782 Jobs found</span>
-                                        <!-- Select job items start -->
-                                        <div class="select-job-items">
-                                            <span><a href="{{ URL::to('sorta') }}" style="color: black"> Sắp Xếp Lương Cao - Thấp    ::</a></span>
-                                            <span><a href="{{ URL::to('sortprice1') }}" style="color: black">  Sắp Xếp Lương Thấp - Cao </a></span>
-                                           
-                                        </div>
-                                        <!--  Select job items End-->
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Count of Job list End -->
-                            <!-- single-job-content -->
-                            
-                                @foreach ($data as $item)
-                                    @if ($item->status == 0)
-                                    @endif
-                                    @if ($item->status == 1)
-                                        <div class="single-job-items mb-30">
-                                            <div class="company-img">
-                                                <a href="#"><img src="{{ asset('./user/assets/img/icon/job-list1.png') }}"
-                                                        alt=""></a>
-                                            </div>
-                                            <div class="job-items">
-                                                <div class="job-tittle job-tittle2">
-                                                    <a href="#">
-                                                        <h4>{{ $item->title }}</h4>
-                                                    </a>
-                                                    <ul>
-                                                        <li> <a class="p"><span style="
-                                                            display:inline-block;
-                                                            white-space: nowrap;
-                                                            overflow: hidden;
-                                                            text-overflow: ellipsis;
-                                                            max-width: 15ch;">
-                                                        {{$item->name}}
-                                                          </span></a></li>
-                                                        <li><i class="fas fa-map-marker-alt"></i>Amount:
-                                                            {{ $item->amount }}
-                                                        </li>
-                                                        <li>${{ $item->minMoney }} - ${{ $item->maxMoney }}</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="items-link items-link2 f-right">
-                                                <a href="job_details.html" class="p"><span style="
-                                                    display:inline-block;
-                                                    white-space: nowrap;
-                                                    overflow: hidden;
-                                                    text-overflow: ellipsis;
-                                                    max-width: 9ch;">
-                                                {{$item->type}}
-                                                  </span></a>
-                                                  @auth
-                                                  @if (Auth::user()->is_admin == 0)
-                                                  <a href="{{ route('viewPost', [$item->id,'id_user'=>Auth::User()->id]) }}" >Ứng Tuyển</a>
-                                                             
-                                                     @elseif(Auth::user()->is_admin == 2) 
-                                                              {{-- nhaf tuyeern dung --}}
-                                                            
-                                                   @endif
-                                                 
-                                                  @else
-                                                  
-                                                  <a href="{{ route('login') }}"  >Ứng Tuyển</a>
-                                                  @endauth
-                                            </div>
-                                        </div>
-                                    @endif
-                                @endforeach
-                           
-                          
-                            <!-- single-job-content -->
-
-                        </div>
-                    </section>
-                    <!-- Featured_job_end -->
-                </div>
+                <!-- Breadcrumb row END -->
             </div>
         </div>
     </div>
+    <!-- inner page banner END -->
+    <!-- contact area -->
+    <div class="content-block">
+        <!-- Browse Jobs -->
+        <div class="section-full bg-white browse-job content-inner-2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-9 col-lg-8">
+                        <h5 class="widget-title font-weight-700 text-uppercase">Recent Jobs</h5>
+                        <ul class="post-job-bx">
+
+                            @foreach ($data as $item)
+
+                            @if($item->status == 0)
+
+                            @endif
+                            @if($item->status == 1)
+                            <li>
+                                <a href="{{ route('viewPost', ['id'=>$item->id]) }}">
+                                    <div class="d-flex m-b30">
+                                        <div class="job-post-company">
+                                            <span><img src="{{asset('user1/images/logo/icon1.png')}}" /></span>
+                                        </div>
+                                        <div class="job-post-info">
+                                            <h4>{{$item->title}}</h4>
+                                            <ul>
+                                                <li><i class="fa fa-map-marker"></i> Sacramento, California</li>
+                                                <li><i class="fa fa-bookmark-o"></i> Full Time</li>
+                                                <li><i class="fa fa-clock-o"></i> Published 11 months ago</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex">
+                                        <div class="job-time mr-auto">
+
+                                            <span> {{$item->type}}</span>
+
+
+                                        </div>
+                                        <div class="salary-bx">
+                                            <span>${{$item->minMoney}}.USD - ${{$item->maxMoney}}.USD</span>
+                                        </div>
+                                    </div>
+                                    <span class="post-like fa fa-heart-o"></span>
+                                </a>
+                            </li>
+                            @endif
+
+                            @endforeach
+                        </ul>
+                        <div class="pagination-bx m-t30">
+                            <ul class="pagination">
+                                <li class="previous"><a href="#"><i class="ti-arrow-left"></i> Prev</a></li>
+                                <li class="active"><a href="#">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li class="next"><a href="#">Next <i class="ti-arrow-right"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-4">
+                        <div class="sticky-top">
+                            <div class="clearfix m-b30">
+                                <h5 class="widget-title font-weight-700 text-uppercase">Keywords</h5>
+                                <div class="">
+                                    <input type="text" class="form-control" placeholder="Search">
+                                </div>
+                            </div>
+                            <div class="clearfix">
+                                <h5 class="widget-title font-weight-700 text-uppercase">Sort</h5>
+                               
+                                <div class="clearfix">
+                                            <span><a href="{{ URL::to('sorta') }}" style="color: black"> Sắp Xếp Lương Cao - Thấp </a></span><br>
+                                            <span><a href="{{ URL::to('sortprice1') }}" style="color: black">  Sắp Xếp Lương Thấp - Cao </a></span>
+                                           
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Browse Jobs END -->
+    </div>
+</div>
 @endsection

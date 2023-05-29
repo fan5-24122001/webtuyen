@@ -92,6 +92,14 @@
 
 
             </ul>
+            <ul aria-expanded="false">
+                <li><a href="{{route('admin.addBlog')}}">Tạo Blog</a></li>
+                <li><a href="{{route('admin.listBlog')}}">Danh Sách Blog</a></li>
+                
+                
+
+
+            </ul>
         </li>
         <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
             <i class="flaticon-050-info"></i>

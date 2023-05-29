@@ -1,23 +1,24 @@
 <?php
 
-use App\Http\Controllers\adminController;
-use App\Http\Controllers\categoryController;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\PropertiesController;
-use App\Http\Controllers\ApplyJobController;
-
-use App\Http\Controllers\PostController;
-use App\Http\Controllers\ApplyController;
-use App\Http\Controllers\EmailController;
-use Illuminate\Support\Facades\Auth;
-
-use App\Http\Controllers\CheckMailController;
-use Illuminate\Support\Facades\Route;
-// use App\Http\Controllers\Auth\LoginController;
-use App\Http\Controllers\CheckUserControlller;
-use App\Http\Controllers\PostAdminController;
 use App\Models\Post;
 use App\Models\categoryModel;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BlogController;
+
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\adminController;
+use App\Http\Controllers\ApplyController;
+
+use App\Http\Controllers\EmailController;
+use App\Http\Controllers\ApplyJobController;
+// use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\categoryController;
+use App\Http\Controllers\CheckMailController;
+use App\Http\Controllers\PostAdminController;
+use App\Http\Controllers\CheckUserControlller;
+use App\Http\Controllers\PropertiesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -56,7 +57,14 @@ Route::get('/sortprice1', [PostController::class, 'sortaz1'])->name('sort1');
 // Route::get('/sortprice2', [PostController::class, 'sortprice'])->name('sort-2');
 
 
-
+Route::get('/sortprice1', [PostController::class, 'sortaz1'])->name('sort1');
+Route::get('/danhsach-blog',[BlogController::class, 'list'])->name('admin.listBlog');
+Route::get('/editblog/{id}', [BlogController::class,'edit'])->name('admin.editBlog');
+Route::put('/updateblog/{id}',[BlogController::class,'update'])->name('admin.updateBlog');
+Route::get('/addblog', [BlogController::class,'add'])->name('admin.addBlog');
+Route::post('/postaddblog', [BlogController::class,'create'])->name('admin.postaddBlog');
+Route::delete('/deleteblog/{id}', [BlogController::class,'delete'])->name('admin.deleteBlog');
+  
 
 Route::get('/viewPost/{id}', [PostController::class, 'viewPost'])->name('viewPost');
 // nhà tuyển dụng

@@ -17,12 +17,39 @@
     $skill = explode(',', $id->skill);
     $skills = array_diff($dataSkill, $skill);
     ?>
-    <div class="whole-wrap">
-        <div class="container box_1170">
-            <div class="section-top-border">
-                <div class="row">
-                    <div class="col-lg-8 col-md-8">
-                        <h3 class="mb-30">Sửa Bài Đăng{{ $id->title }}</h3>
+    <div class="page-content bg-white" style="margin-bottom:200px">>
+    <!-- inner page banner -->
+    <div class="dez-bnr-inr overlay-black-middle"
+        style="background-image:url({{asset('user1/imagesbanner/bnr1.jpg')}});">
+        <div class="container">
+            <div class="dez-bnr-inr-entry">
+                <h1 class="text-white">Quản Lý Bài Tuyển Dụng</h1>
+                <!-- Breadcrumb row -->
+                <div class="breadcrumb-row">
+                    <ul class="list-inline">
+                        <li><a href="#">Home</a></li>
+                        <li>Quản Lý Bài Tuyển Dụng</li>
+                    </ul>
+                </div>
+                <!-- Breadcrumb row END -->
+            </div>
+        </div>
+    </div>
+    <!-- inner page banner END -->
+    <!-- contact area -->
+    <div class="content-block">
+        <!-- Browse Jobs -->
+        <div class="section-full bg-white browse-job content-inner-2">
+            <div class="container">
+            <div class="row">
+            <div class="col-12">
+                <h2 class="contact-title"> Quản Lý Bài Tuyển Dụng</h2>
+            </div>
+            
+            <div class="col-lg-8">
+            <div class="section-full bg-white submit-resume content-inner-2">
+				<div class="container">
+                <h3 class="mb-30">Sửa Bài Đăng{{ $id->title }}</h3>
                         <form action="{{ route('PostEdit') }}" method="POST" enctype="multipart/form-data">
                             @csrf @method('POST')
                             <input type="hidden" name="id" value="{{ $id->id }}" value="1">
@@ -103,61 +130,129 @@
 
                             </div>
                             <div class="mt-10">
-                                <input type="text" name="name" value="{{ $id->name }}" placeholder="Name"
+                            <label>Tên Cty</label>
+                                <input type="text" name="name" class="form-control" value="{{ $id->name }}" placeholder="Name"
                                     onfocus="this.placeholder = ''" onblur="this.placeholder = 'Last Name'" required=""
                                     class="single-input">
                             </div>
                             <div class="mt-10">
-                                <input type="hidden" name="id_user" value="{{ $id->id_user }}">
+                          
+                                <input type="hidden" name="id_user"  class="form-control" value="{{ $id->id_user }}">
                             </div>
                             <div class="mt-10">
-                                <input type="email" name="email" value="{{ $id->email }}" placeholder="Email address"
-                                    onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email address'" required=""
+                            <label>Địa Chỉ Email</label>
+                                <input type="email" name="email"  class="form-control" value="{{ $id->email }}" placeholder="Email address"
+                                    onfocus="this.placeholder = ''"   class="form-control"onblur="this.placeholder = 'Email address'" required=""
                                     class="single-input">
                             </div>
+                            
                             <div class="mt-10">
-                                <input type="text" name="numberPhone" value="{{ $id->numberPhone }}"
+                            <label>Phone</label>
+                                <input type="text"  class="form-control" name="numberPhone" value="{{ $id->numberPhone }}"
                                     placeholder="Number Phone" onfocus="this.placeholder = ''"
                                     onblur="this.placeholder = 'Email address'" required="" class="single-input">
                             </div>
                             <div class="mt-10">
-                                <input type="text" name="address" value="{{ $id->address }}" placeholder="Address"
+                            <label>Địa Chỉ Cty</label>
+                                <input type="text"  class="form-control" name="address" value="{{ $id->address }}" placeholder="Address"
                                     onfocus="this.placeholder = ''" onblur="this.placeholder = 'Address'" required=""
                                     class="single-input">
                             </div>
                             <div class="mt-10">
-                                <input type="number" name="amount" value="{{ $id->amount }}" placeholder="Amount apply"
+                            <label>Số Lượng</label>
+                                <input type="number" class="form-control" name="amount" value="{{ $id->amount }}" placeholder="Amount apply"
                                     required="" class="single-input">
                             </div>
                             <div class="mt-10">
-                                <input type="number" name="minMoney" value="{{ $id->minMoney }}"
+                            <label>Tiền Thấp Nhất</label>
+                                <input type="number" class="form-control" name="minMoney" value="{{ $id->minMoney }}"
                                     placeholder="Min Money apply" required="" class="single-input">
                             </div>
                             <div class="mt-10">
-                                <input type="number" name="maxMoney" value="{{ $id->maxMoney }}"
+                            <label>Tiền Cao Nhất</label>
+                                <input type="number" class="form-control" name="maxMoney" value="{{ $id->maxMoney }}"
                                     placeholder="Max Money apply" required="" class="single-input">
                             </div>
                             <div class="mt-10">
-                                <input type="text" name="title" value="{{ $id->title }}" placeholder="Title" required=""
+                            <label>Tên Bài Viết</label>
+                                <input type="text" class="form-control" name="title" value="{{ $id->title }}" placeholder="Title" required=""
                                     class="single-input">
                             </div>
                             <div class="mt-10">
-                                <textarea class="single-textarea" name="content" placeholder="Content" required="">{{ $id->content }}</textarea>
+                            <label>Content</label>
+                                <textarea  class="form-control" name="content" placeholder="Content" required="">{{ $id->content }}</textarea>
                             </div>
                             <div class="mt-10">
                           
-                               
-                                <input type="date" name="timeEnd" class="form-control" value="{{ $id->timeEnd }}" placeholder=" nhập ngày kết thúc : 2022-12-04" id="mdate" required data-dtp="dtp_HwDDi">
+                            <label>Ngày Kết Thúc</label>    
+                                <input  class="form-control" type="date" name="timeEnd" class="form-control" value="{{ $id->timeEnd }}" placeholder=" nhập ngày kết thúc : 2022-12-04" id="mdate" required data-dtp="dtp_HwDDi">
                           
                         </div>
                             <div class="mt-10">
-                                <button type="submit" class="single-input-secondary bg-success">Cập nhật</button>
+                                <button type="submit" class="site-button">Cập nhật</button>
                             </div>
                         </form>
                     </div>
+</div>
+            </div>
+           
 
+                    <div class="col-xl-3 col-lg-4">
+                    @if (Auth::user()->is_admin == 0)
+                    <a href="{{ URL::to('/profile/show') }}" class="site-button"><i class="fa fa-user"></i> Your information</a><hr>
+                    <a href="{{ URL::to('/love/show') }}" class="site-button"><i class="fa fa-user"></i> Love</a><hr>
+                    <a href="{{ URL::to('/Show-Apply') }}" class="site-button"><i class="fa fa-user"></i> Đã ứng tuyển </a><hr>
+                    <a href="{{ route('logout') }}"  onclick="event.preventDefault();
+                                                         document.getElementById('logout-form').submit();">
+                                                <svg id="icon-logout" xmlns="http://www.w3.org/2000/svg"
+                                                    class="text-danger" width="18" height="18" viewbox="0 0 24 24"
+                                                    fill="none" stroke="currentColor" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round">
+                                                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4">
+                                                    </path>
+                                                    <polyline points="16 17 21 12 16 7"></polyline>
+                                                    <line x1="21" y1="12" x2="9" y2="12"></line>
+                                                </svg>
+                                                <span>
+                                                    {{ __('Logout') }}
+                                                </span>
+                                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                                    class="d-none">
+                                                    @csrf
+                                                </form>
+                                            </a>
+                 
+                    @elseif(Auth::user()->is_admin == 2)
+
+                    <a href="{{ URL::to('/profile/show') }}" class="site-button"><i class="fa fa-user"></i> Thông Tin Của Bạn </a><hr>
+                    <a href="{{ route('PostAdd') }}" class="site-button"><i class="fa fa-user"></i> Đăng Bài Tuyển Dụng</a><hr>
+                    <a href="{{ route('PostList') }}" class="site-button"><i class="fa fa-user"></i> QLý Bài Tuyển Dụng</a><hr>
+                    <a href="{{ route('logout') }}"  onclick="event.preventDefault();
+                                                         document.getElementById('logout-form').submit();">
+                                                <svg id="icon-logout" xmlns="http://www.w3.org/2000/svg"
+                                                    class="text-danger" width="18" height="18" viewbox="0 0 24 24"
+                                                    fill="none" stroke="currentColor" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round">
+                                                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4">
+                                                    </path>
+                                                    <polyline points="16 17 21 12 16 7"></polyline>
+                                                    <line x1="21" y1="12" x2="9" y2="12"></line>
+                                                </svg>
+                                                <span>
+                                                    {{ __('Logout') }}
+                                                </span>
+                                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                                    class="d-none">
+                                                    @csrf
+                                                </form>
+                                            </a>
+                    @endif
+                    </div>
                 </div>
             </div>
         </div>
+        <!-- Browse Jobs END -->
     </div>
+</div>
+
 @endsection

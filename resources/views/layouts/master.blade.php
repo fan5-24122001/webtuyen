@@ -38,6 +38,7 @@
 	<link rel="stylesheet" type="text/css" href="{{asset('user1/plugins/revolution/revolution/css/layers.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{asset('user1/plugins/revolution/revolution/css/settings.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{asset('user1/plugins/revolution/revolution/css/navigation.css')}}">
+
 	<!-- Revolution Navigation Style -->
 </head>
 
@@ -68,7 +69,7 @@
 
     
   <!-- JS here -->
-	
+  
 <script src="{{asset('user1/js/jquery.min.js')}}"></script><!-- JQUERY.MIN JS -->
 <script src="{{asset('user1/plugins/wow/wow.js')}}"></script><!-- WOW JS -->
 <script src="{{asset('user1/plugins/bootstrap/js/popper.min.js')}}"></script><!-- BOOTSTRAP.MIN JS -->
